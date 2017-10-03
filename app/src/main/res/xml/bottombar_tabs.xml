@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs>
+    <tab
+        id="@+id/tab_home"
+        icon="@drawable/ic_menu_home"
+        title="Home"
+        activeColor="@color/colorPrimary"
+        />
+
+    <tab
+        id="@+id/tab_programs"
+        icon="@drawable/ic_menu_programs"
+        title="Programs"
+        activeColor="@color/colorPrimary"
+        />
+
+    <tab
+        id="@+id/tab_profile"
+        icon="@drawable/ic_menu_profile"
+        title="Profile"
+        activeColor="@color/colorPrimary"
+        />
+
+    <tab
+        id="@+id/tab_myphysio"
+        icon="@drawable/ic_menu_my_physio"
+        title="My Physio"
+        activeColor="@color/colorPrimary"
+        />
+</tabs>

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="au.com.myphysioapp.myphysio.ui.login.SignUpWithEmailAVM"/>
+    </data>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/background"
+            android:orientation="vertical">
+
+            <!-- Email -->
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/sign_up_email"
+                style="@style/SideMarginsTextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/common_margin_medium"
+                >
+
+                <AutoCompleteTextView
+                    style="@style/SingleLineAutoTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/e_mail"
+                    android:inputType="textEmailAddress"
+                    android:imeOptions="actionNext"
+                    android:text="@={vm.email}"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <!-- Password -->
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/sign_up_password"
+                style="@style/SideMarginsTextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/common_margin_huge"
+                >
+
+                <AutoCompleteTextView
+                    style="@style/SingleLineAutoTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/password"
+                    android:inputType="textPassword"
+                    android:imeOptions="actionNext"
+                    android:text="@={vm.password}"
+                    />
+
+            </android.support.design.widget.TextInputLayout>
+
+            <!-- Postcode -->
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/sign_up_postcode"
+                style="@style/SideMarginsTextInputLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/common_margin_huge"
+                >
+
+                <AutoCompleteTextView
+                    style="@style/SingleLineAutoTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/postcode"
+                    android:inputType="textPostalAddress"
+                    android:imeOptions="actionDone"
+                    android:text="@={vm.postCode}"/>
+
+            </android.support.design.widget.TextInputLayout>
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/form_hobbies"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:overScrollMode="never"
+                android:paddingStart="@dimen/common_margin_medium"
+                android:paddingEnd="@dimen/common_margin_medium"
+                android:layout_marginTop="@dimen/common_margin_huge"
+                bind:configuration="@{vm.listConf}"
+                />
+
+            <View style="@style/HorizontalSep.WithMargins" />
+
+            <include
+                android:id="@+id/form_activity_level"
+                layout="@layout/form_activity_level"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                bind:checkedChangeListener="@{vm::onActivityLevelChecked}"
+                bind:checkedItemId="@{null}"
+                />
+
+            <View style="@style/HorizontalSep.WithMargins" />
+
+            <TextView
+                style="@style/Text.Common.Bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginStart="@dimen/common_margin_medium"
+                android:layout_marginEnd="@dimen/common_margin_medium"
+                android:text="@string/gender"
+                />
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/common_margin_micro"
+                android:layout_marginStart="@dimen/common_margin_medium"
+                android:layout_marginEnd="@dimen/common_margin_medium"
+                app:OnCheckedChangeListener="@{vm::onGenderChecked}"
+                >
+
+                <RadioButton
+                    android:id="@+id/gender_male"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/male"
+                    android:checked="true"
+                    />
+
+                <RadioButton
+                    android:id="@+id/gender_female"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/female"
+                    android:layout_marginStart="@dimen/common_margin_small"
+                    />
+
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/sign_up_btn"
+                style="@style/WhiteOutlinedButton"
+                android:layout_width="@dimen/whiteOutlineButton_width"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="@dimen/common_margin_big"
+                android:onClick="@{vm::onClickSignUp}"
+                android:text="@string/sign_up"
+                android:layout_marginBottom="@dimen/common_margin_big"
+                />
+
+        </LinearLayout>
+    </ScrollView>
+</layout>

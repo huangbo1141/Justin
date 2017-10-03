@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="vm"
+            type="au.com.myphysioapp.myphysio.ui.user_programs.ProgramItemVM"/>
+    </data>
+
+    <android.support.v7.widget.CardView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/cell_vertical_padding"
+            >
+
+            <ImageView
+                android:id="@+id/program_picture"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/item_program_picture_height"
+                android:src="@{vm.programPicture}"
+                android:scaleType="centerCrop"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                />
+
+            <TextView
+                android:id="@+id/program_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/cell_picture_spacing"
+                android:layout_marginEnd="@dimen/cell_vertical_padding"
+                android:text="@{vm.programName}"
+                android:ellipsize="marquee"
+                android:maxLines="1"
+                android:textAppearance="@style/Text.Common.Bold"
+                android:layout_marginTop="@dimen/common_margin_medium"
+                app:layout_constraintTop_toBottomOf="@id/program_picture"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintLeft_toRightOf="@+id/item_mark"
+                tools:text="Program name"
+                />
+
+            <TextView
+                android:id="@+id/program_description"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/common_margin_micro"
+                android:text="@{vm.programDescription}"
+                android:textAppearance="@style/Text.Small.Light"
+                android:ellipsize="end"
+                android:maxLines="1"
+                app:layout_constraintLeft_toLeftOf="@id/program_name"
+                app:layout_constraintRight_toRightOf="@id/program_name"
+                app:layout_constraintTop_toBottomOf="@id/program_name"
+                tools:text="Program short description"
+                />
+
+            <ImageView
+                android:id="@id/item_mark"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/activity_level_2"
+                app:layout_constraintBottom_toBottomOf="@id/program_description"
+                app:layout_constraintTop_toTopOf="@id/program_name"
+                app:layout_constraintLeft_toLeftOf="parent"
+                android:layout_marginStart="@dimen/cell_vertical_padding"
+                />
+
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v7.widget.CardView>
+</layout>

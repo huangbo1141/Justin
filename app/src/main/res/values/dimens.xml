@@ -1,0 +1,101 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="activity_horizontal_margin2">8dp</dimen>
+    <dimen name="activity_vertical_margin2">8dp</dimen>
+
+    <!-- Default sizes of specific widgets -->
+    <dimen name="tab_height">48dp</dimen>
+
+    <!-- Universal spacing constants-->
+    <dimen name="common_margin_micro">4dp</dimen>
+    <dimen name="common_margin_small">8dp</dimen>
+    <dimen name="common_margin_medium">16dp</dimen>
+    <dimen name="common_margin_big">24dp</dimen>
+    <dimen name="common_margin_huge">32dp</dimen>
+    <dimen name="common_margin_immense">48dp</dimen>
+
+    <dimen name="cell_picture_spacing">@dimen/common_margin_medium</dimen>
+    <dimen name="cell_picture_spacing2">@dimen/common_margin_small</dimen>
+    <dimen name="cell_horizontal_padding">16dp</dimen>
+    <dimen name="cell_horizontal_padding2">9dp</dimen>
+    <dimen name="cell_vertical_padding">@dimen/cell_horizontal_padding</dimen>
+    <dimen name="cell_vertical_padding2">@dimen/cell_horizontal_padding2</dimen>
+
+    <dimen name="cell_vertical_margin">5dp</dimen>
+    <dimen name="cell_horizontal_margin">@dimen/cell_vertical_margin</dimen>
+
+
+    <!-- Global dimens for widgets -->
+    <dimen name="viewpager_page_margin">@dimen/activity_horizontal_margin</dimen>
+    <dimen name="viewpager_horizontal_padding">@dimen/viewpager_page_margin</dimen>
+
+    <!-- Font size -->
+    <dimen name="text_extra_small">14sp</dimen>
+    <dimen name="text_small">15sp</dimen>
+    <dimen name="text_common">17sp</dimen>
+    <dimen name="text_medium">21sp</dimen>
+    <dimen name="text_large">26sp</dimen>
+
+    <dimen name="whiteOutlineButton_width">200dp</dimen>
+
+    <!-- Login module -->
+    <dimen name="activity_level_drawablePadding">12dp</dimen>
+    <dimen name="activity_level_item_margin">@dimen/common_margin_big</dimen>
+    <dimen name="hobby_item_side_margin">@dimen/common_margin_micro</dimen>
+    <dimen name="hobby_picture_height">90dp</dimen>
+    <dimen name="hobby_picture_width">110dp</dimen>
+    <dimen name="big_social_button_size">72dp</dimen>
+
+
+    <!-- User programs part -->
+    <dimen name="fab_play_button_elevation">20dp</dimen>
+    <dimen name="exercise_preview_page_margin">12dp</dimen>
+    <dimen name="circular_element_elevation">7dp</dimen>
+    <dimen name="page_indicator_padding">15dp</dimen>
+    <dimen name="page_indicator_radius">7dp</dimen>
+    <dimen name="big_circle_view_size">60dp</dimen>
+    <dimen name="medium_circle_size">48dp</dimen>
+    <dimen name="countdown_donut_size">82dp</dimen>
+    <dimen name="item_program_picture_height">250dp</dimen>
+
+    <!-- Notifications part -->
+    <dimen name="decision_btn_height">32dp</dimen>
+    <dimen name="decision_btn_paddingStart">10dp</dimen>
+    <dimen name="decision_btn_paddingEnd">8dp</dimen>
+    <dimen name="decision_btn_drawablePadding">5dp</dimen>
+    <dimen name="decision_btnshort_size">@dimen/decision_btn_height</dimen>
+    <dimen name="decision_btnshort_horizontal_padding">10dp</dimen>
+    <dimen name="notification_user_picture_size">48dp</dimen>
+
+    <!-- Profile part -->
+    <dimen name="card_button_horizontal_padding">16dp</dimen>
+    <dimen name="card_button_vertical_padding">8dp</dimen>
+    <dimen name="card_button_drawablePadding">5dp</dimen>
+    <dimen name="card_button_drawable_max_size">36dp</dimen>
+    <dimen name="card_button_horizontal_margin">8dp</dimen>
+    <dimen name="card_button_horizontal_margin_half">4dp</dimen>
+    <dimen name="card_button_vertical_margin">@dimen/card_button_horizontal_margin</dimen>
+    <dimen name="card_button_drawable_size">32dp</dimen>
+    <dimen name="user_picture_size">120dp</dimen>
+    <dimen name="dialog_vertical_margin">@dimen/activity_vertical_margin</dimen>
+    <dimen name="dialog_horizontal_margin">30dp</dimen>
+
+    <!-- Home screen -->
+    <dimen name="exercise_rv_item_width">300dp</dimen>
+    <dimen name="bottom_bar_height">60dp</dimen>
+
+    <!-- Pain form screen -->
+    <dimen name="seekBar_valueLine_spacing">10dp</dimen>
+    <dimen name="pain_illustration_size">168dp</dimen>
+    <dimen name="progress_item_donut_size">60dp</dimen>
+    <dimen name="donut_stroke_width">5dp</dimen>
+
+    <!-- Statistics part -->
+    <dimen name="x_axis_label_marginTop">10dp</dimen>
+    <dimen name="chart_text_size">@dimen/text_small</dimen>
+    <dimen name="program_list_horizontal_margin">8dp</dimen>
+    <dimen name="instruction_arrow_button_width">40dp</dimen>
+    <dimen name="sign_in_with_icon_size">48dp</dimen>
+</resources>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:bind="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="au.com.myphysioapp.myphysio.ui.home.ExerciseListItemVM"/>
+    </data>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="@dimen/exercise_rv_item_width"
+        android:layout_height="match_parent"
+        >
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- TODO: Use a SquareImageView there -->
+            <ImageView
+                android:id="@+id/video_preview"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:clickable="false"
+                android:scaleType="centerCrop"
+                app:layout_constraintBottom_toTopOf="@+id/exercise_name"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                android:layout_marginBottom="@dimen/cell_picture_spacing2"
+                bind:imageBitmap="@{vm.preview}"
+                />
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/play_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_play_button"
+                app:backgroundTint="@color/background"
+                app:elevation="@dimen/fab_play_button_elevation"
+                app:fabSize="normal"
+                app:layout_constraintBottom_toBottomOf="@+id/video_preview"
+                app:layout_constraintLeft_toLeftOf="@+id/video_preview"
+                app:layout_constraintRight_toRightOf="@+id/video_preview"
+                app:layout_constraintTop_toTopOf="@+id/video_preview"
+                />
+
+            <TextView
+                android:id="@id/exercise_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textAppearance="@style/Text.Common.Bold"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintBottom_toTopOf="@id/exercise_duration"
+                android:layout_marginStart="@dimen/cell_horizontal_padding2"
+                android:text="@{vm.name}"
+                />
+
+            <TextView
+                android:id="@+id/exercise_duration"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/common_margin_small"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textAppearance="@style/Text.Small.Light"
+                app:layout_constraintLeft_toLeftOf="@id/exercise_name"
+                app:layout_constraintRight_toLeftOf="@+id/exercise_sets"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginBottom="@dimen/cell_vertical_padding2"
+                android:text="@{vm.duration}"
+                />
+
+            <TextView
+                android:id="@+id/exercise_sets"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:maxLines="1"
+                android:textAppearance="@style/Text.Small.Light"
+                app:layout_constraintTop_toTopOf="@id/exercise_duration"
+                app:layout_constraintRight_toRightOf="parent"
+                android:text="@{vm.setsCount}"
+                android:layout_marginEnd="@dimen/cell_horizontal_padding2"
+                />
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v7.widget.CardView>
+</layout>

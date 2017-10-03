@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#69cca7</color>
+    <color name="colorPrimaryDark">#66cba8</color>
+    <color name="colorAccent">#75d0a4</color>
+
+    <color name="colorAccentTransparent">#AA75d0a4</color>
+
+    <color name="bg_btn">@android:color/white</color>
+    <color name="decision_btn_text_color">@android:color/white</color>
+
+    <color name="background">#fbfcfe</color>
+    <color name="backgroundExerciseScreen">#485465</color>
+    <color name="bottom_bar_inactive_color">#90A4AE</color>
+    <color name="bg_bottom_bar">@color/background</color>
+
+    <color name="textColorCommon">#485465</color>
+    <color name="textColorHint">#9cafc3</color>
+    <color name="textColorWhite">@android:color/white</color>
+    <color name="textColorGreen">@color/colorPrimaryDark</color>
+
+    <color name="colorSeparatorGrey">#afafaf</color>
+    <color name="progress_unfinished">#ddd</color>
+    <color name="progress_finished">@color/colorPrimaryDark</color>
+    <color name="bg_donut_time">@android:color/white</color>
+    <color name="donut_time_elapsing">@color/colorPrimaryDark</color>
+    <color name="donut_time_remaining">#dfe1e2</color>
+
+    <color name="colorStatToolbarText">@android:color/white</color>
+    <color name="colorStatToolbarElements">@color/colorStatToolbarText</color>
+    <color name="colorChartValueText">@color/textColorGreen</color>
+    <color name="colorChartBar">#a9ecd3</color>
+    <color name="colorChartBarHighlight">#3d7e68</color>
+    <color name="colorChartAxisText">#485465</color>
+    <color name="colorChartGrid">#d7d7d7</color>
+    <color name="colorChartGridBackground">@android:color/white</color>
+    <color name="colorChartBackground">#dde4ee</color>
+
+    <color name="colorAtHomeProgress">#f76b1c</color>
+    <color name="colorAtWorkProgress">#4a90e2</color>
+    <color name="colorOtherProgress">#504dcc</color>
+    <color name="colorSymptomProgress">@color/colorPrimaryDark</color>
+</resources>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  Include it LinearLayout with vertical orientation -->
+<layout
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <import type="java.lang.Integer"/>
+
+        <variable
+            name="textLabel"
+            type="java.lang.String"/>
+
+        <variable
+            name="progress"
+            type="int"/>
+
+        <variable
+            name="reachedColor"
+            type="int"/>
+
+        <variable
+            name="marginTop"
+            type="float"/>
+    </data>
+
+    <merge xmlns:android="http://schemas.android.com/apk/res/android"
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{textLabel}"
+            android:textAppearance="@style/Text.ExtraSmall"
+            bind:layout_marginTop="@{marginTop}"
+            tools:text="At home"
+            />
+
+        <com.daimajia.numberprogressbar.NumberProgressBar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            bind:max="@{100}"
+            bind:progress="@{progress}"
+            bind:progressTextColor="@{reachedColor}"
+            bind:reachedBarColor="@{reachedColor}"
+            custom:progress_reached_bar_height="3dp"
+            custom:progress_text_size="@dimen/text_extra_small"
+            custom:progress_unreached_bar_height="1px"
+            />
+    </merge>
+</layout>

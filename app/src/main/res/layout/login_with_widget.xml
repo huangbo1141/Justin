@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+        <variable
+            name="listener"
+            type="au.com.myphysioapp.myphysio.widget.OnClickSocialButtonListener"/>
+    </data>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content">
+
+        <ImageButton
+            android:id="@+id/sign_in_with_twitter"
+            style="@style/NoBackgroundImageButton"
+            android:layout_width="@dimen/sign_in_with_icon_size"
+            android:layout_height="@dimen/sign_in_with_icon_size"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:layout_marginEnd="@dimen/common_margin_small"
+            android:onClick="@{listener::onTwitterEntry}"
+            android:src="@drawable/ic_twitter"
+            />
+
+        <ImageButton
+            android:id="@+id/sign_in_with_facebook"
+            style="@style/NoBackgroundImageButton"
+            android:layout_width="@dimen/sign_in_with_icon_size"
+            android:layout_height="@dimen/sign_in_with_icon_size"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:onClick="@{listener::onFacebookEntry}"
+            android:src="@drawable/ic_facebook"
+            />
+
+        <ImageButton
+            android:id="@+id/sign_in_with_google_plus"
+            style="@style/NoBackgroundImageButton"
+            android:layout_width="@dimen/sign_in_with_icon_size"
+            android:layout_height="@dimen/sign_in_with_icon_size"
+            android:adjustViewBounds="true"
+            android:scaleType="fitXY"
+            android:layout_marginStart="@dimen/common_margin_small"
+            android:onClick="@{listener::onGooglePlusEntry}"
+            android:src="@drawable/ic_google"
+            />
+
+    </LinearLayout>
+</layout>

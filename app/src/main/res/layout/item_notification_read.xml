@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="au.com.myphysioapp.myphysio.ui.notifications.ReadNotificationVM"/>
+    </data>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/cell_vertical_padding"
+            android:paddingEnd="@dimen/cell_horizontal_padding2"
+            android:paddingStart="@dimen/cell_horizontal_padding2"
+            android:paddingTop="@dimen/cell_vertical_padding"
+            >
+
+            <android.support.constraint.Guideline
+                android:id="@+id/middle_line"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintGuide_percent="0.5"/>
+
+            <ImageView
+                android:id="@+id/notification_icon"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_envelope"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                />
+
+            <TextView
+                android:id="@+id/notification_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/common_margin_medium"
+                android:maxLines="1"
+                android:text="@{@string/appointment + ' '}"
+                android:textAppearance="@style/Text.Small.Bold"
+                app:layout_constraintBottom_toTopOf="@+id/middle_line"
+                app:layout_constraintLeft_toRightOf="@+id/notification_icon"/>
+
+            <TextView
+                android:id="@+id/notification_date"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:text="@{vm.dateString}"
+                android:textAppearance="@style/Text.Small"
+                app:layout_constraintLeft_toRightOf="@+id/notification_title"
+                app:layout_constraintRight_toLeftOf="@+id/notification_status"
+                app:layout_constraintTop_toTopOf="@+id/notification_title"
+                />
+
+            <TextView
+                android:id="@+id/notification_sender"
+                style="@style/Text.Small"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:maxLines="1"
+                android:text="@{vm.sender}"
+                app:layout_constraintLeft_toLeftOf="@+id/notification_title"
+                app:layout_constraintRight_toLeftOf="@+id/notification_status"
+                app:layout_constraintTop_toTopOf="@+id/middle_line"
+                tools:text="dolor sit amet, consectetur adipiscing elit"/>
+
+            <FrameLayout
+                android:id="@+id/notification_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/common_margin_small"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                >
+
+                <ImageButton
+                    style="@style/DecisionButtonShort"
+                    android:clickable="false"
+                    android:visibility="@{!vm.isAccepted}"
+                    android:src="@drawable/ic_checkmark_reject"
+                    android:background="@drawable/bg_reject_button"
+                    android:contentDescription="@string/rejected"
+                    />
+
+                <ImageButton
+                    style="@style/DecisionButtonShort"
+                    android:clickable="false"
+                    android:visibility="@{vm.isAccepted}"
+                    android:src="@drawable/ic_checkmark_accept"
+                    android:background="@drawable/bg_accept_button"
+                    android:contentDescription="@string/accepted"
+                    />
+
+            </FrameLayout>
+
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v7.widget.CardView>
+</layout>

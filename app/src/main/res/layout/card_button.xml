@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="drawableStart"
+            type="android.graphics.drawable.Drawable"/>
+
+        <variable
+            name="text"
+            type="java.lang.String"/>
+
+        <variable
+            name="clickListener"
+            type="android.view.View.OnClickListener"/>
+
+        <variable
+            name="labelMaxLines"
+            type="java.lang.Integer"/>
+    </data>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <LinearLayout
+            style="?android:attr/buttonBarButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clickable="@{clickListener != null}"
+            android:onClick="@{clickListener}"
+            android:orientation="horizontal"
+            android:clipToPadding="false"
+            android:paddingBottom="@dimen/card_button_vertical_padding"
+            android:paddingEnd="@dimen/card_button_horizontal_padding"
+            android:paddingStart="@dimen/card_button_horizontal_padding"
+            android:paddingTop="@dimen/card_button_vertical_padding"
+            >
+
+            <ImageView
+                android:layout_width="@dimen/card_button_drawable_size"
+                android:layout_height="@dimen/card_button_drawable_size"
+                android:clickable="false"
+                android:adjustViewBounds="true"
+                android:layout_gravity="start|center_vertical"
+                android:src="@{drawableStart}"
+                tools:src="@drawable/ic_sex"
+                />
+
+            <TextView
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:clickable="false"
+                android:ellipsize="end"
+                android:maxLines="@{labelMaxLines ?? 1}"
+                android:text="@{text}"
+                android:layout_gravity="center"
+                android:gravity="center_vertical|start"
+                android:textAppearance="@style/Text.Small.Light"
+                android:layout_marginStart="@dimen/card_button_drawablePadding"
+                tools:text="Woman"
+                />
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+</layout>

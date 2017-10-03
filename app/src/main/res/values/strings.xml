@@ -1,0 +1,116 @@
+<resources>
+    <!-- TODO:Розсортувати стрічки по модулям -->
+    <string name="app_name">MyPhysio</string>
+    <string name="app_name_full">MyPhysio.app</string>
+
+    <!-- Strings related to login -->
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="repeat_password">Repeat password</string>
+    <string name="first_name">First Name</string>
+    <string name="second_name">Second Name</string>
+    <string name="postcode">Postcode</string>
+    <string name="sign_in">Sign in</string>
+    <string name="sign_up">Sign up</string>
+
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email
+        completions."
+    </string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="your_activity_level">Your activity level</string>
+    <string name="manage_your_activity">Manage Your Activities</string>
+    <string name="how_active_your_lifestyle">How active is your lifestyle?</string>
+    <string name="choose_how_much_days_you_exercise">choose how much time per week you exercise</string>
+
+    <string name="sign_up_with_facebook">Sign up with\nFacebook</string>
+    <string name="sign_up_with_google">Sign up with\nGoogle</string>
+    <string name="sign_up_with_email">Sign up with\nemail</string>
+
+    <string name="education">Education</string>
+    <string name="sport">Sport</string>
+    <string name="health">Health</string>
+    <string name="choose_your_hobbies">Choose your hobbies</string>
+    <string name="gender">Gender</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="seconds_short">secs</string>
+    <string name="sets">sets</string>
+    <string name="side">side</string>
+
+    <string name="login">Login</string>
+
+    <!-- Notifications part -->
+    <string name="messaging">Messaging</string>
+    <string name="appointment">Appointment</string>
+    <string name="rejected">Rejected</string>
+    <string name="accepted">Accepted</string>
+    <string name="accept">Accept</string>
+    <string name="reject">Reject</string>
+
+    <!-- Profile part -->
+    <string name="profile">Profile</string>
+    <string name="birth_date_formatter">%1$te %1$tb %1$tY</string>
+    <string name="user_height_formatter">%d cm</string>
+    <string name="user_weight_formatter">%d kg</string>
+    <string name="e_mail">E-mail</string>
+    <string name="phone">Phone</string>
+    <string name="ok">OK</string>
+    <string name="choose_your_height">Choose your height</string>
+    <string name="choose_your_weight">Choose your weight</string>
+
+    <!-- User programs -->
+    <string name="my_programs">My programs</string>
+    <string name="exercise_steps_formatter">%1$d. %2$s</string>
+
+    <!-- Contacts part -->
+    <string name="my_physio">My Physio</string>
+    <string name="urgent_appointment">Urgent appointment</string>
+    <string name="request_an_appointment">Request an appointment</string>
+    <string name="visit_website">Visit website</string>
+    <string name="call">Call</string>
+    <string name="share">Share</string>
+
+    <!-- Home screen -->
+    <string name="home">Home</string>
+    <string name="seconds_formatter">%d seconds</string>
+    <string name="sets_formatter">%d sets</string>
+    <string name="exercises">Exercises</string>
+
+    <string name="reminders">Reminders</string>
+    <string name="statistics">Statistics</string>
+    <string name="resource">Resource</string>
+
+    <!-- Pain level screen -->
+    <string name="no_hurt">No hurt</string>
+    <string name="hurts_little_bit">Hurts a little bit</string>
+    <string name="hurts_little_more">Hurts a little more</string>
+    <string name="hurts_even_more">Hurts even more</string>
+    <string name="hurts_whole_lot">Hurts a whole lot</string>
+    <string name="hurts_worst">Hurts worst</string>
+    <string name="how_are_you_feeling_now">How are you feeling now?</string>
+
+    <!-- Progress part -->
+    <string name="my_progress">My progress</string>
+    <string name="progress_format" formatted="false">%1$d/%2$d</string>
+    <string name="date_format" formatted="false">%1$tR on %1$tm.%1$td.%1$ty</string>
+    <string name="completed_exercise_statistics">Completed exercise statistics</string>
+    <string name="complete_this_week_formatter">Complete %d this week</string>
+    <string name="programs_complete">Programs\ncomplete</string>
+    <string name="quick_note_formatter" formatted="false">Quick note</string>
+    <!--<string name="quick_note_formatter" formatted="false">Quick\nnote for\n\"%s\"</string>-->
+    <string name="at_work">At work</string>
+    <string name="other_locations">Other locations</string>
+    <string name="at_home">At home</string>
+    <string name="progress_item_formatter">%1$ta, %1$te %1$tb</string>
+    <string name="list">List</string>
+    <string name="chart">Chart</string>
+    <string name="remind">Remind</string>
+    <string name="profile_settings">Profile settings</string>
+    <string name="search">Search</string>
+    <string name="save">Save</string>
+
+</resources>

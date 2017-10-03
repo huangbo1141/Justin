@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:bind="http://schemas.android.com/apk/res-auto"
+        tools:context="au.com.myphysioapp.myphysio.ui.StatisticsActivity">
+    
+    <data>
+        <variable
+            name="vm"
+            type="au.com.myphysioapp.myphysio.ui.statistics.StatisticsAVM"/>
+    </data>
+
+    <android.support.design.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <android.support.v7.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="?attr/colorPrimary"
+                app:subtitleTextColor="@color/colorStatToolbarText"
+                app:titleTextColor="@color/colorStatToolbarText"
+                app:layout_scrollFlags="scroll|enterAlways"
+                android:theme="@style/MyPhysioAppTheme"
+                bind:navigationOnClickListener="@{vm::onClickBackButton}"
+                />
+
+            <android.support.design.widget.TabLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:tabTextColor="@color/colorStatToolbarText"
+                app:tabSelectedTextColor="@color/colorStatToolbarText"
+                app:tabIndicatorColor="@color/colorStatToolbarElements"
+                app:tabIndicatorHeight="6dp"
+                bind:viewpager="@{statisticsContent}"
+                />
+
+        </android.support.design.widget.AppBarLayout>
+
+        <au.com.myphysioapp.myphysio.widget.NoSwipeViewPager
+            android:id="@+id/statistics_content"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:adapter="@{vm.adapter}"
+            />
+    </android.support.design.widget.CoordinatorLayout>
+</layout>

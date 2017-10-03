@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="vm"
+            type="au.com.myphysioapp.myphysio.ui.login.SignUpFVM"
+            />
+    </data>
+    <android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.constraint.Guideline
+            android:id="@+id/line_horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintGuide_percent=".5"
+            />
+
+        <android.support.constraint.Guideline
+            android:id="@+id/line_vertical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent=".5"
+            />
+
+        <ImageButton
+            style="@style/NoBackgroundImageButton.BigSocialImageButton"
+            android:id="@+id/sign_up_facebook"
+            android:layout_width="@dimen/big_social_button_size"
+            android:layout_height="@dimen/big_social_button_size"
+            android:onClick="@{vm::onFacebookSignUp}"
+            android:src="@drawable/ic_facebook"
+            app:layout_constraintBottom_toTopOf="@id/line_horizontal"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@id/line_vertical"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{vm::onFacebookSignUp}"
+            android:textAppearance="@style/Text.Small.Light"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@id/sign_up_facebook"
+            app:layout_constraintLeft_toLeftOf="@id/sign_up_facebook"
+            app:layout_constraintRight_toRightOf="@id/sign_up_facebook"
+            android:layout_marginTop="@dimen/common_margin_small"
+            android:text="@string/sign_up_with_facebook"
+            />
+
+        <ImageButton
+            style="@style/NoBackgroundImageButton.BigSocialImageButton"
+            android:id="@+id/sign_up_google"
+            android:layout_width="@dimen/big_social_button_size"
+            android:layout_height="@dimen/big_social_button_size"
+            android:onClick="@{vm::onGooglePlusSignUp}"
+            android:src="@drawable/ic_google"
+            app:layout_constraintBottom_toTopOf="@id/line_horizontal"
+            app:layout_constraintLeft_toRightOf="@id/line_vertical"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{vm::onGooglePlusSignUp}"
+            android:textAppearance="@style/Text.Small.Light"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@id/sign_up_google"
+            app:layout_constraintLeft_toLeftOf="@id/sign_up_google"
+            app:layout_constraintRight_toRightOf="@id/sign_up_google"
+            android:layout_marginTop="@dimen/common_margin_small"
+            android:text="@string/sign_up_with_google"
+            />
+
+        <ImageButton
+            style="@style/NoBackgroundImageButton.BigSocialImageButton"
+            android:id="@+id/sign_up_email"
+            android:layout_width="@dimen/big_social_button_size"
+            android:layout_height="@dimen/big_social_button_size"
+            android:onClick="@{vm::onEmailSignUp}"
+            android:src="@drawable/ic_email"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="@id/line_vertical"
+            app:layout_constraintRight_toRightOf="@id/line_vertical"
+            app:layout_constraintTop_toBottomOf="@id/line_horizontal"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{vm::onEmailSignUp}"
+            android:textAppearance="@style/Text.Small.Light"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@id/sign_up_email"
+            app:layout_constraintLeft_toLeftOf="@id/sign_up_email"
+            app:layout_constraintRight_toRightOf="@id/sign_up_email"
+            android:layout_marginTop="@dimen/common_margin_small"
+            android:text="@string/sign_up_with_email"
+            />
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

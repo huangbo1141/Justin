@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+
+    <data>
+
+        <variable
+            name="vm"
+            type="au.com.myphysioapp.myphysio.ui.user_programs.PainFeelingsFormAVM"/>
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/activity_pain_fellings_form"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        tools:context="au.com.myphysioapp.myphysio.ui.user_programs.PainFeelingsFormAVM">
+
+
+        <TextView
+            android:id="@+id/how_are_you_feeling"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/how_are_you_feeling_now"
+            android:textAppearance="@style/Text.Big.Bold"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            />
+
+        <!-- Chain of views -->
+        <ImageView
+            android:id="@+id/pain_illustration"
+            android:layout_width="@dimen/pain_illustration_size"
+            android:layout_height="@dimen/pain_illustration_size"
+            android:layout_marginTop="@dimen/common_margin_medium"
+            android:scaleType="centerInside"
+            android:src="@{vm.currentLevelPicture}"
+            app:layout_constraintBottom_toTopOf="@+id/pain_description"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/how_are_you_feeling"
+            app:layout_constraintVertical_chainStyle="packed"
+            tools:src="@drawable/ic_pain_0"
+            />
+
+        <TextView
+            android:id="@+id/pain_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/common_margin_small"
+            android:gravity="center"
+            android:text="@{vm.currentLevelDescription}"
+            android:textAppearance="@style/Text.Big.Bold"
+            app:layout_constraintBottom_toTopOf="@+id/seekbar_section"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pain_illustration"
+            />
+
+        <LinearLayout
+            android:id="@+id/seekbar_section"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/common_margin_medium"
+            app:layout_constraintBottom_toTopOf="@+id/program_start_button"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/pain_description"
+            />
+
+        <!-- End chain of views -->
+
+
+        <!-- High value of padding is to avoid cropped shadow effect-->
+        <FrameLayout
+            android:id="@id/program_start_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            android:clipToPadding="false"
+            android:padding="@dimen/activity_vertical_margin"
+            android:onClick="@{vm::onClickStart}"
+            >
+
+            <android.support.design.widget.FloatingActionButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@android:color/transparent"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:elevation="16dp"
+                android:text="Start"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="@android:color/white"
+                />
+        </FrameLayout>
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

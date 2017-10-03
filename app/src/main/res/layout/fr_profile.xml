@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="vm"
+            type="au.com.myphysioapp.myphysio.ui.profile.ProfileFVM"/>
+    </data>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            >
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/user_picture"
+                android:layout_width="@dimen/user_picture_size"
+                android:layout_height="@dimen/user_picture_size"
+                android:layout_marginTop="@dimen/common_margin_medium"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                bind:imageBitmap="@{vm.userPicture}"
+                />
+
+            <android.support.constraint.Guideline
+                android:id="@+id/middle_vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent=".5"
+                />
+
+            <include
+                android:id="@+id/user_sex"
+                layout="@layout/card_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/common_margin_medium"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginEnd="@dimen/card_button_horizontal_margin_half"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/middle_vertical"
+                app:layout_constraintTop_toBottomOf="@id/user_picture"
+                bind:drawableStart="@{@drawable/ic_sex}"
+                bind:text="@{vm.isMale ? @string/male : @string/female}"
+                bind:clickListener="@{vm::onClickGender}"
+                />
+
+            <include
+                android:id="@+id/user_height"
+                layout="@layout/card_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/card_button_horizontal_margin"
+                android:layout_marginStart="@dimen/activity_horizontal_margin"
+                android:layout_marginEnd="@dimen/card_button_horizontal_margin_half"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toLeftOf="@id/middle_vertical"
+                app:layout_constraintTop_toBottomOf="@id/user_sex"
+                bind:drawableStart="@{@drawable/ic_ruler}"
+                bind:text="@{@string/user_height_formatter(vm.userHeight)}"
+                bind:clickListener="@{vm::onClickHeight}"
+                />
+
+            <include
+                android:id="@+id/user_birthday"
+                layout="@layout/card_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/card_button_horizontal_margin_half"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                app:layout_constraintLeft_toRightOf="@id/middle_vertical"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@id/user_sex"
+                bind:drawableStart="@{@drawable/ic_birthday_cake_piece}"
+                bind:text="@{@string/birth_date_formatter(vm.birthDay)}"
+                bind:clickListener="@{vm::onClickBirthday}"
+                />
+
+            <include
+                android:id="@+id/user_weight"
+                layout="@layout/card_button"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/card_button_horizontal_margin"
+                android:layout_marginStart="@dimen/card_button_horizontal_margin_half"
+                android:layout_marginEnd="@dimen/activity_horizontal_margin"
+                app:layout_constraintLeft_toRightOf="@id/middle_vertical"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/user_birthday"
+                bind:drawableStart="@{@drawable/ic_scales}"
+                bind:text="@{@string/user_weight_formatter(vm.userWeight)}"
+                bind:clickListener="@{vm::onClickWeight}"
+                />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/user_height"
+                >
+
+                <!-- Phone -->
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/user_phone"
+                    style="@style/SideMarginsTextInputLayout.BiggerMargins"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/common_margin_huge"
+                    >
+
+                    <AutoCompleteTextView
+                        style="@style/SingleLineAutoTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/phone"
+                        android:inputType="phone"
+                        android:imeOptions="actionNext"
+                        android:text="@={vm.userPhone}"/>
+
+                </android.support.design.widget.TextInputLayout>
+
+                <!-- Email -->
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/user_email"
+                    style="@style/SideMarginsTextInputLayout.BiggerMargins"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/common_margin_huge"
+                    >
+
+                    <AutoCompleteTextView
+                        style="@style/SingleLineAutoTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/e_mail"
+                        android:inputType="textEmailAddress"
+                        android:imeOptions="actionNext"
+                        android:text="@={vm.userEmail}"/>
+
+                </android.support.design.widget.TextInputLayout>
+
+                <!-- Postcode -->
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/user_postcode"
+                    style="@style/SideMarginsTextInputLayout.BiggerMargins"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/common_margin_huge"
+                    >
+
+                    <AutoCompleteTextView
+                        style="@style/SingleLineAutoTextView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/postcode"
+                        android:inputType="textPostalAddress"
+                        android:imeOptions="actionDone"
+                        android:text="@={vm.userPostCode}"/>
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.v7.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:clipToPadding="false"
+                    android:overScrollMode="never"
+                    bind:configuration="@{vm.listConf}"
+                    android:paddingStart="@dimen/common_margin_medium"
+                    android:paddingEnd="@dimen/common_margin_medium"
+                    android:layout_marginTop="@dimen/common_margin_huge"
+                    />
+
+                <include
+                    android:id="@+id/form_activity_level"
+                    layout="@layout/form_activity_level"
+                    bind:checkedChangeListener="@{vm::onActivityLevelChecked}"
+                    bind:checkedItemId="@{vm.getUserActivityLevel()}"
+                    />
+
+            </LinearLayout>
+        </android.support.constraint.ConstraintLayout>
+    </android.support.v4.widget.NestedScrollView>
+</layout>
