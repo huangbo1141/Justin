@@ -1,5 +1,6 @@
 package au.com.myphysioapp.myphysio.ui.statistics;
 
+import android.content.Intent;
 import android.databinding.ObservableField;
 import android.databinding.ObservableInt;
 import android.os.Bundle;
@@ -35,6 +36,7 @@ import au.com.myphysioapp.myphysio.R;
 import au.com.myphysioapp.myphysio.databinding.FrProgressChartBinding;
 import au.com.myphysioapp.myphysio.model.PainLevel;
 import au.com.myphysioapp.myphysio.model.ProgressItem;
+import au.com.myphysioapp.myphysio.ui.chat.ChatAVM;
 
 /**
  * Created by Wooden on 17.02.2017.
@@ -148,6 +150,7 @@ public class ProgressChartFVM extends FragmentVM
         //Apply previously set viewPortOffsets and avoid a tricky bug
         chart.moveViewToX(0);
         binding.setVm(this);
+        binding.setHandlers(this);
         return binding.getRoot();
     }
 
@@ -210,5 +213,9 @@ public class ProgressChartFVM extends FragmentVM
 
     public int getExerciseCountNorm(){
         return 12;
+    }
+    public void onClickQuickNote(View view) {
+        Intent i = new Intent(getActivity(), ChatAVM.class);
+        startActivity(i);
     }
 }

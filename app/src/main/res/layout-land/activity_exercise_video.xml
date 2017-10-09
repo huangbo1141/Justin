@@ -27,7 +27,6 @@
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginEnd="@dimen/activity_horizontal_margin"
-            android:background="@drawable/exercise_preview"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toLeftOf="@+id/countdown"
             app:layout_constraintTop_toTopOf="parent"

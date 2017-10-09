@@ -26,7 +26,7 @@
                 android:id="@+id/program_picture"
                 android:layout_width="0dp"
                 android:layout_height="@dimen/item_program_picture_height"
-                android:src="@{vm.programPicture}"
+                android:src="@{vm.url}"
                 android:scaleType="centerCrop"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"

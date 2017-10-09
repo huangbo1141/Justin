@@ -65,9 +65,10 @@ public class StatisticsAVM extends AppCompatActivity{
         String listTitle = getString(R.string.list);
         String chartTitle = getString(R.string.chart);
         viewPagerAdapter = new ViewPagerAdapter(getSupportFragmentManager(),
-                new String[]{listTitle, chartTitle},
-                new ProgressListFVM(),
-                new ProgressChartFVM());
+                new String[]{chartTitle,listTitle},
+                new ProgressChartFVM(),
+                new ProgressListFVM()
+                );
 
         binding.setVm(this);
     }

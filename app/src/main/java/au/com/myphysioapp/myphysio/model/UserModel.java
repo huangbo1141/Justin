@@ -22,8 +22,14 @@ public class UserModel {
     public String invited;
     public String active;
     public String hash_active;
-    public String has_forgetpassword;
+    public String hash_forgetpassword;
     public String is_deleted;
-    public String toxbox_session_id;
-    public String company_toxbox_session_id;
+    public String tokbox_session_id;
+    public String active_program;
+    public String phone;
+    public String cliniko_id;
+    public String company_tokbox_session_id;
+    public String tokbox_api_key;
+    public String tokbox_client_token;
+    public String tokbox_company_token;
 }

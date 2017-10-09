@@ -4,12 +4,16 @@ import android.databinding.BindingAdapter;
 import android.databinding.BindingConversion;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.StateListDrawable;
+import android.net.Uri;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.RadioButton;
+
+import com.bumptech.glide.Glide;
 
 import au.com.myphysioapp.myphysio.widget.WrapContentViewPager;
 
@@ -72,4 +76,10 @@ public class BindingAdapters {
     public static void setViewPager(TabLayout tabLayout, ViewPager viewPager) {
         tabLayout.setupWithViewPager(viewPager);
     }
+
+    @BindingAdapter("android:src")
+    public static void setImageUrl(ImageView view, String url) {
+        Glide.with(view.getContext()).load(url).into(view);
+    }
+
 }

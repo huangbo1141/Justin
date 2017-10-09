@@ -7,13 +7,12 @@ import org.json.JSONObject;
  */
 
 public class Global {
-    public static String BASE_API_URL = "http://mpa.jsoft.com.au/api";
 
-    public static String LOGIN_API_URL = BASE_API_URL + "/user/login";
-    public static String SIGNUP_API_URL = BASE_API_URL + "/user/register";
-    public static String GET_PROGRAM_API_URL = BASE_API_URL + "/user/getClientProgramList";
-
-
+    public static String LOGIN_API_URL          = "/api/user/login";
+    public static String SIGNUP_API_URL         = "/api/user/register";
+    public static String GET_PROGRAM_API_URL    = "/api/user/getClientProgramList";
+    public static String GENERATE_TOKBOX_TOKEN    = "/api/user/generateTokboxToken";
+    public static boolean isTest = false;
     public static UserModel g_loginedUser;
 
     public static String optString(JSONObject obj, String param){

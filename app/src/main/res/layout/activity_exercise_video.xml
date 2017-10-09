@@ -20,13 +20,14 @@
         tools:context="au.com.myphysioapp.myphysio.ui.user_programs.ExerciseInstructionAVM">
 
         <VideoView
-            android:layout_width="0dp"
+            android:id="@+id/exercise_view"
+            android:layout_width="match_parent"
             android:layout_height="360dp"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintLeft_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toTopOf="@+id/countdown"
-            android:background="@drawable/exercise_preview"
+
             />
 
         <com.github.lzyzsd.circleprogress.DonutProgress

@@ -23,4 +23,8 @@ public class ExerciseBasicAVM extends AppCompatActivity {
     public int getExerciseDuration(){
         return exerciseDuration;
     }
+
+    public void setExerciseDuration(int a){
+        exerciseDuration = a;
+    }
 }

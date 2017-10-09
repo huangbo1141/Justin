@@ -3,6 +3,7 @@ package au.com.myphysioapp.myphysio.netutil;
 import android.content.Context;
 import android.text.format.DateUtils;
 
+import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpVersion;
 import org.apache.http.NameValuePair;
@@ -40,15 +41,18 @@ import java.security.KeyStore;
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.TrustManager;
+
+import au.com.myphysioapp.myphysio.model.Global;
 
 
 public class WebServiceClient {
 
 	private Context mContext = null;
-	private String baseURL = "";
+	private String baseURL = "http://mpa.jsoft.com.au";
 	private static int some_reasonable_timeout = (int) (1800 * DateUtils.SECOND_IN_MILLIS);
 		
 	public WebServiceClient(Context context){
@@ -323,5 +327,82 @@ public class WebServiceClient {
 		HttpClient httpclient = new DefaultHttpClient(httpParams);
 		return httpclient;
 	}
-	
+
+	public String sendDataToServerForm(String url, ArrayList<NameValuePair> PostParamsValue){
+
+		String responseBody = "";
+		try{
+			String finalURL =  baseURL + url;
+			HttpClient httpclient = getHttpClient();
+
+			HttpPost httpPost = new HttpPost(finalURL);
+			httpPost.setEntity(new UrlEncodedFormEntity(PostParamsValue));
+			HttpResponse response = httpclient.execute(httpPost);
+
+			HttpEntity entity2 = response.getEntity();
+			// do something useful with the response body
+			// and ensure it is fully consumed
+			responseBody = EntityUtils.toString(entity2);
+
+		}catch(Exception e){
+			//Logger.e("Exception ==> ", e.toString());
+			return "";
+		}
+		if(responseBody == null || responseBody.equalsIgnoreCase("null")){
+			return "";
+		}else{
+			return responseBody;
+		}
+	}
+	public String sendDataToServer(String url, JSONObject objParams, Map<String,Object> other){
+
+		String responseBody = "";
+		try{
+			String finalURL =  baseURL + url;
+			//Logger.v("REQUEST ", finalURL + " " + PostParamsValue);
+
+			HttpClient httpclient = getHttpClient();
+			HttpPost httppost = new HttpPost(finalURL);
+			httppost.setHeader("Accept", "application/json");
+			httppost.setHeader("Content-type", "application/json");
+
+			if(objParams!=null){
+				StringEntity se = new StringEntity( objParams.toString());
+				se.setContentType(new BasicHeader(HTTP.CONTENT_TYPE, "application/json"));
+				httppost.setEntity(se);
+			}
+			if (other!=null){
+				if (other.containsKey("authorization_header")){
+					httppost.setHeader("Authorization", Global.g_loginedUser.api_key);
+				}
+			}
+			HttpResponse response = httpclient.execute(httppost);
+
+			StringBuilder sb = new StringBuilder();
+			try {
+				BufferedReader reader =
+						new BufferedReader(new InputStreamReader(response.getEntity().getContent()), 65728);
+				String line = null;
+
+				while ((line = reader.readLine()) != null) {
+					sb.append(line);
+				}
+			}
+			catch (IOException e) { e.printStackTrace(); }
+			catch (Exception e) { e.printStackTrace(); }
+			//responseBody = EntityUtils.toString(response.getEntity());
+			responseBody = sb.toString();
+
+			//Logger.v("SERVER RESPONSE", responseBody);
+
+		}catch(Exception e){
+			//Logger.e("Exception ==> ", e.toString());
+			return "";
+		}
+		if(responseBody == null || responseBody.equalsIgnoreCase("null")){
+			return "";
+		}else{
+			return responseBody;
+		}
+	}
 }

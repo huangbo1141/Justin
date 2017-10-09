@@ -113,4 +113,8 @@
     <string name="search">Search</string>
     <string name="save">Save</string>
 
+    <string name="setting">Setting</string>
+    <string name="cancel">Cancel</string>
+    <string name="rationale_video_app">rationale_video_app</string>
+    <string name="crash_toast_text">Crash Report</string>
 </resources>

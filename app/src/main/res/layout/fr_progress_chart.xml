@@ -6,7 +6,7 @@
     >
 
     <data>
-
+        <variable name="handlers" type="au.com.myphysioapp.myphysio.ui.statistics.ProgressChartFVM"/>
         <variable
             name="vm"
             type="au.com.myphysioapp.myphysio.ui.statistics.ProgressChartFVM"/>
@@ -142,6 +142,7 @@
                 app:layout_constraintLeft_toLeftOf="@id/stat_complete_programs"
                 app:layout_constraintRight_toRightOf="@id/stat_complete_programs"
                 app:layout_constraintTop_toTopOf="@+id/stat_pain"
+                android:onClick="@{handlers::onClickQuickNote}"
                 >
 
                 <LinearLayout

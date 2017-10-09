@@ -95,6 +95,7 @@ public class SignInFVM extends FragmentVM implements OnClickSocialButtonListener
 
                             Global.g_loginedUser.user_id = Global.optString(objUser, "id");
                             Global.g_loginedUser.email = Global.optString(objUser,"email");
+                            Global.g_loginedUser.username = Global.optString(objUser,"username");
                             Global.g_loginedUser.password = Global.optString(objUser,"password");
                             Global.g_loginedUser.api_key = Global.optString(objUser,"api_key");
                             Global.g_loginedUser.avatar = Global.optString(objUser,"avatar");
@@ -108,8 +109,15 @@ public class SignInFVM extends FragmentVM implements OnClickSocialButtonListener
                             Global.g_loginedUser.role_id = Global.optString(objUser,"role_id");
                             Global.g_loginedUser.invited = Global.optString(objUser,"invited");
                             Global.g_loginedUser.active = Global.optString(objUser,"active");
-                            Global.g_loginedUser.toxbox_session_id = Global.optString(objUser,"toxbox_session_id");
-                            Global.g_loginedUser.company_toxbox_session_id = Global.optString(objUser,"company_toxbox_session_id");
+//                            Global.g_loginedUser.hash_active = Global.optString(objUser,"hash_active");
+//                            Global.g_loginedUser.hash_forgetpassword = Global.optString(objUser,"hash_forgetpassword");
+//                            Global.g_loginedUser.is_deleted = Global.optString(objUser,"is_deleted");
+                            Global.g_loginedUser.tokbox_session_id = Global.optString(objUser,"tokbox_session_id");
+//                            Global.g_loginedUser.active_program = Global.optString(objUser,"active_program");
+//                            Global.g_loginedUser.phone = Global.optString(objUser,"phone");
+//                            Global.g_loginedUser.cliniko_id = Global.optString(objUser,"cliniko_id");
+                            Global.g_loginedUser.company_tokbox_session_id = Global.optString(objUser,"company_tokbox_session_id");
+                            Global.g_loginedUser.tokbox_api_key = Global.optString(objUser,"tokbox_api_key");
 
                             Intent i = new Intent(getActivity(), BottomBarActivity.class);
                             startActivity(i);

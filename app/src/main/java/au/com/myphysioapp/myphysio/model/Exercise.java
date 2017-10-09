@@ -2,11 +2,13 @@ package au.com.myphysioapp.myphysio.model;
 
 import android.graphics.Bitmap;
 
+import java.io.Serializable;
+
 /**
  * Created by Wooden on 11.02.2017.
  */
 
-public class Exercise {
+public class Exercise implements Serializable{
     public enum Side {
         LEFT("L"), RIGHT("R"), BOTH("L|R");
 
@@ -25,9 +27,12 @@ public class Exercise {
     private String name;
     private String description;
     private int duration;
+    public String time;
     private int sets;
     private Side side;
     private Bitmap exercisePreview;
+    public String photo;
+    public String video;
 
     public Exercise(){}
 
@@ -61,6 +66,13 @@ public class Exercise {
 
     public int getDuration() {
         return duration;
+    }
+    public String getDurationString() {
+        if (duration == 0){
+            return "~";
+        }else{
+            return String.valueOf(duration);
+        }
     }
 
     public void setDuration(int duration) {
